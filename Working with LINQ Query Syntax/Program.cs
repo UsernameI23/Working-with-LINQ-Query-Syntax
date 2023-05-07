@@ -1,34 +1,50 @@
-﻿class famousPeople
+﻿public class Student
 {
-    public string Name { get; set; }
-    public int? BirthYear { get; set; } = null;
-    public int? DeathYear { get; set; } = null;
-
-
-    IList<famousPeople> stemPeople = new List<famousPeople>() {
-                new famousPeople() { Name= "Michael Faraday", BirthYear=1791,DeathYear=1867 },
-                new famousPeople() { Name= "James Clerk Maxwell", BirthYear=1831,DeathYear=1879 },
-                new famousPeople() { Name= "Marie Skłodowska Curie", BirthYear=1867,DeathYear=1934 },
-                new famousPeople() { Name= "Katherine Johnson", BirthYear=1918,DeathYear=2020 },
-                new famousPeople() { Name= "Jane C. Wright", BirthYear=1919,DeathYear=2013 },
-                new famousPeople() { Name = "Tu YouYou", BirthYear= 1930 },
-                new famousPeople() { Name = "Françoise Barré-Sinoussi", BirthYear=1947 },
-                new famousPeople() {Name = "Lydia Villa-Komaroff", BirthYear=1947},
-                new famousPeople() {Name = "Mae C. Jemison", BirthYear=1956},
-                new famousPeople() {Name = "Stephen Hawking", BirthYear=1942,DeathYear=2018 },
-                new famousPeople() {Name = "Tim Berners-Lee", BirthYear=1955 },
-                new famousPeople() {Name = "Terence Tao", BirthYear=1975 },
-                new famousPeople() {Name = "Florence Nightingale", BirthYear=1820,DeathYear=1910 },
-                new famousPeople() {Name = "George Washington Carver", DeathYear=1943 },
-                new famousPeople() {Name = "Frances Allen", BirthYear=1932,DeathYear=2020 },
-                new famousPeople() {Name = "Bill Gates", BirthYear=1955 }
-     };
-
-    //var countAge = famousPeople.Count(s => s.BirthYear > 1900);
-    var countLetter = from s in famousPeople
-                      where s.Major.Contains("l", "l")
-                      orderby s.Major
-                      select s;
-    var countAge = famousPeople.Count(s => s.BirthYear > 1950);
-
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+    public int Age { get; set; }
+    public string Major { get; set; }
+    public double Tuition { get; set; }
 }
+public class StudentClubs
+{
+    public int StudentID { get; set; }
+    public string ClubName { get; set; }
+}
+public class StudentGPA
+{
+    public int StudentID { get; set; }
+    public double GPA { get; set; }
+}
+
+
+// Student collection
+IList<Student> studentList = new List<Student>() {
+                new Student() { StudentID = 1, StudentName = "Frank Furter", Age = 55, Major="Hospitality", Tuition=3500.00} ,
+                new Student() { StudentID = 1, StudentName = "Gina Host", Age = 21, Major="Hospitality", Tuition=4500.00 } ,
+                new Student() { StudentID = 2, StudentName = "Cookie Crumb",  Age = 21, Major="CIT", Tuition=2500.00 } ,
+                new Student() { StudentID = 3, StudentName = "Ima Script",  Age = 48, Major="CIT", Tuition=5500.00 } ,
+                new Student() { StudentID = 3, StudentName = "Cora Coder",  Age = 35, Major="CIT", Tuition=1500.00 } ,
+                new Student() { StudentID = 4, StudentName = "Ura Goodchild" , Age = 40, Major="Marketing", Tuition=500.00} ,
+                new Student() { StudentID = 5, StudentName = "Take Mewith" , Age = 29, Major="Aerospace Engineering", Tuition=5500.00 }
+        };
+// Student GPA Collection
+IList<StudentGPA> studentGPAList = new List<StudentGPA>() {
+                new StudentGPA() { StudentID = 1,  GPA=4.0} ,
+                new StudentGPA() { StudentID = 2,  GPA=3.5} ,
+                new StudentGPA() { StudentID = 3,  GPA=2.0 } ,
+                new StudentGPA() { StudentID = 4,  GPA=1.5 } ,
+                new StudentGPA() { StudentID = 5,  GPA=4.0 } ,
+                new StudentGPA() { StudentID = 6,  GPA=2.5} ,
+                new StudentGPA() { StudentID = 7,  GPA=1.0 }
+            };
+// Club collection
+IList<StudentClubs> studentClubList = new List<StudentClubs>() {
+            new StudentClubs() {StudentID=1, ClubName="Photography" },
+            new StudentClubs() {StudentID=1, ClubName="Game" },
+            new StudentClubs() {StudentID=2, ClubName="Game" },
+            new StudentClubs() {StudentID=5, ClubName="Photography" },
+            new StudentClubs() {StudentID=6, ClubName="Game" },
+            new StudentClubs() {StudentID=7, ClubName="Photography" },
+            new StudentClubs() {StudentID=3, ClubName="PTK" },
+        };
